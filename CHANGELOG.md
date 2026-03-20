@@ -1,3 +1,9 @@
+## v0.7.1 (2026-03-20)
+
+### Fix
+
+- **__main__.py**: Allow a new AI agent to be selected when using cli tool
+
 ## v0.7.0 (2026-03-20)
 
 ### Feat
