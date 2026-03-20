@@ -159,6 +159,7 @@ version = "0.5.0"
 source = { virtual = "." }
 dependencies = [
     { name = "pyyaml" },
+    { name = "questionary" },
 ]
 
 [package.dev-dependencies]
@@ -168,7 +169,10 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "pyyaml", specifier = ">=6.0.3" }]
+requires-dist = [
+    { name = "pyyaml", specifier = ">=6.0.3" },
+    { name = "questionary", specifier = ">=2.1.1" },
+]
 
 [package.metadata.requires-dev]
 dev = [
