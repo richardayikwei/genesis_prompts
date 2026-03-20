@@ -24,5 +24,8 @@ jobs:
       - name: Sync dependencies
         run: uv sync --dev --frozen
 
+      - name: Install project
+        run: uv pip install -e .
+
       - name: Run test
         run: uv run pytest
