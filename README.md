@@ -1,5 +1,5 @@
 # Genesis Prompts
-A library used to log prompts for the purpose of proving that you are the author of a work you built using AI
+A CLI tool used to log prompts for the purpose of proving that you are the author of a work you built using AI
 
 ## Genesis Prompts Format
 

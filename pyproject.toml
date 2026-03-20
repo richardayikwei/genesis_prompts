@@ -1,7 +1,7 @@
 [project]
 name = "genesis-prompts"
 version = "0.5.0"
-description = "A library used to log prompts for the purpose of proving that you are the author of a work you built using AI"
+description = "A CLI tool used to log prompts for the purpose of proving that you are the author of a work you built using AI"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
