@@ -25,3 +25,6 @@ changelog_file = "CHANGELOG.md"
 version_files = [
     "pyproject.toml:version"
 ]
+
+[project.scripts]
+genesis = "genesisprompts.__main__:main"
