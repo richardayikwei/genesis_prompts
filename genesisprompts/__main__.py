@@ -24,24 +24,45 @@ def main():
 
 
 # -------------------------
+# AGENT SELECTION
+# -------------------------
+def select_agent(genesis: Genesis):
+    existing_agents = genesis.list_agents()
+
+    # merge default + existing agents
+    all_agents = sorted(set(existing_agents + DEFAULT_AGENTS))
+
+    agent = questionary.select(
+        "Choose AI agent:",
+        choices=all_agents + ["+ Add new agent"]
+    ).ask()
+
+    if not agent:
+        print("Cancelled.")
+        return None
+
+    if agent == "+ Add new agent":
+        agent = questionary.text("Enter new agent name:").ask()
+
+        if not agent:
+            print("Cancelled.")
+            return None
+
+    return agent.strip().lower()
+
+
+# -------------------------
 # ADD COMMAND
 # -------------------------
 def run_add():
     g = Genesis()
 
-    # 1. Select agent
-    agents = g.list_agents() or DEFAULT_AGENTS
-
-    agent = questionary.select(
-        "Choose AI agent:",
-        choices=agents
-    ).ask()
-
+    # 1. Agent selection (fixed)
+    agent = select_agent(g)
     if not agent:
-        print("Cancelled.")
         return
 
-    # 2. Select section
+    # 2. Section selection
     section = questionary.select(
         "Choose section:",
         choices=SECTIONS
@@ -51,12 +72,12 @@ def run_add():
         print("Cancelled.")
         return
 
-    # 3. Enter prompt
+    # 3. Prompt input
     prompt = questionary.text(
         "Paste your prompt:"
     ).ask()
 
-    if not prompt:
+    if not prompt or not prompt.strip():
         print("Prompt cannot be empty.")
         return
 

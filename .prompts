@@ -1,0 +1,132 @@
+version: 1
+idea:
+  chat:
+  - id: idea-001
+    prompt: i would like to create a new type of file called .prompts what would i
+      take for me to create such a file format
+    created_at: '2026-03-20T17:51:36.751632'
+  - id: idea-002
+    prompt: does a .prompts file extention exist
+    created_at: '2026-03-20T18:09:36.767773'
+  - id: idea-003
+    prompt: can i leagally use yaml format
+    created_at: '2026-03-20T18:10:06.826656'
+  - id: idea-004
+    prompt: is there a library that logs prompts
+    created_at: '2026-03-20T18:10:32.605566'
+  - id: idea-005
+    prompt: so i will be creating a library for logging prompts using the yaml format
+    created_at: '2026-03-20T18:12:08.203712'
+  - id: idea-006
+    prompt: "lets start with the file structure of the .prompts file \n\nit should\
+      \ have a typycal yaml format however the main heading are idea, feature and\
+      \ refactor, The idea records the initial prompt written to start the project,\
+      \ the feature contains prompts to build the project or the features of the project\
+      \ and the refact is prompts used to refactor the ideas. under each of the headings\
+      \ the should me sub ones that show the ai agent that was used for the prompts.\
+      \ for example chat, copilot etc. while we are here let create a readme with\
+      \ the definition of the above headinds"
+    created_at: '2026-03-20T18:15:13.890505'
+feature:
+  chat:
+  - id: feat-001
+    prompt: let start with folder structure. I am using uv to create the environment,
+      the folder structure is main folder is call genesis_prompts. followed by genesisprompts
+      as a folder. genesisprompts is where the package will be developed. i will also
+      have a test folder under genesis_prompts as well as all the boiler plate code
+      created by uv.
+    created_at: '2026-03-20T18:13:13.943899'
+  - id: feat-002
+    prompt: let make some changes in the gensisprompts folder i want a main file where
+      loader runner and the other file meet. i will call that file genesis
+    created_at: '2026-03-20T18:13:52.763802'
+  - id: feat-003
+    prompt: am installing cz so i can properly bump and write changelogs also what
+      boiler plate code can i add to toml file please not there is a version = 0.1.0
+      already created by default by uv
+    created_at: '2026-03-20T18:14:31.213194'
+  - id: feat-004
+    prompt: let build the loader. first check that the .prompts file exist at the
+      root of the project if not create it and load it into memory. it should be note
+      that the loader is the first step the file content will be passed to a different
+      function that is responsible for appending new information. if the file does
+      not exit it should create the initial skeleton text within the file. it can
+      prompt the user for information like name
+    created_at: '2026-03-20T18:16:05.320884'
+  - id: feat-005
+    prompt: before this am installing pytest as a dev dependecy and lets create test
+      for the loader
+    created_at: '2026-03-20T18:18:33.727390'
+  - id: feat-006
+    prompt: 'build genenis however i have some specification for exam the user should
+      get some prompt and choose an option for exam there should be a list of AI agents
+      to be provided. so the user gets choose ai agent then the list comes the user
+      can use arrow keys to select the agent. afterwards the user is asked where it''s
+      Idea,Feature,
+
+      Refactor, the after that they are aske to copy and paste the prompt'
+    created_at: '2026-03-20T18:21:19.530773'
+refactor:
+  chat:
+  - id: ref-001
+    prompt: i do not agree with this i want the project to behave like commitzen where
+      it append like the way changelog behaves however. commitzen can create a changelog
+      file in root. my project is to be used as a library
+    created_at: '2026-03-20T18:17:07.639901'
+  - id: ref-002
+    prompt: why does it need this. commitzen does not require me to give a file path
+    created_at: '2026-03-20T18:17:44.761615'
+  - id: ref-003
+    prompt: "i wrote a ci/cid pipline but am getting his error \"platform linux --\
+      \ Python 3.11.15, pytest-9.0.2, pluggy-1.6.0\nrootdir: /home/runner/work/genesis_prompts/genesis_prompts\n\
+      configfile: pyproject.toml\ncollected 0 items / 1 error\n\n====================================\
+      \ ERRORS ====================================\" \n____________________ ERROR\
+      \ collecting tests/test_loader.py _____________________\nImportError while importing\
+      \ test module '/home/runner/work/genesis_prompts/genesis_prompts/tests/test_loader.py'.\n\
+      Hint: make sure your test modules/packages have valid Python names.\nTraceback:\n\
+      /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/importlib/__init__.py:126:\
+      \ in import_module\n    return _bootstrap._gcd_import(name[level:], package,\
+      \ level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+      tests/test_loader.py:3: in <module>\n    from genesisprompts.loader import load_prompts,\
+      \ find_project_root, load_config\nE   ModuleNotFoundError: No module named 'genesisprompts'\n\
+      =========================== short test summary info ============================\n\
+      ERROR tests/test_loader.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during\
+      \ collection !!!!!!!!!!!!!!!!!!!!\n=============================== 1 error in\
+      \ 0.13s ==============================="
+    created_at: '2026-03-20T18:19:47.301859'
+  - id: ref-004
+    prompt: "this is my current readme \"# Genesis Prompts\nA CLI tool used to log\
+      \ prompts for the purpose of proving that you are the author of a work you built\
+      \ using AI\n\n## Genesis Prompts Format\n\n### Overview\n\nThe \n\n.prompts\n\
+      \n file is a YAML-based format used to define and track AI prompts across the\
+      \ lifecycle of a project.\n\nIt organizes prompts into three main stages:\n\n\
+      \    Idea\n\n    Feature\n\n    Refactor\n\nThis structure allows developers\
+      \ to document how a project evolves through AI-assisted development.\n\n###\
+      \ Structure\n1. Idea\n\nThe idea section captures the initial prompts that define\
+      \ the concept or starting point of a project.\n\nThese prompts typically describe:\n\
+      \n    The problem being solved\n\n    The initial system design\n\n    The first\
+      \ implementation request\n\n2. Feature\n\nThe feature section contains prompts\
+      \ used to build and extend the project.\n\nThese prompts typically:\n\n    Add\
+      \ new functionality\n\n    Expand existing capabilities\n\n    Introduce new\
+      \ components or integrations\n\n3. Refactor\n\nThe refactor section contains\
+      \ prompts focused on improving existing code.\n\nThese prompts typically:\n\n\
+      \    Improve code structure and readability\n\n    Optimize performance\n\n\
+      \    Reduce complexity\n\n    Apply best practices\n\nAgent Grouping\n\nWithin\
+      \ each section, prompts are grouped by the AI agent used to generate them.\n\
+      \nExamples:\n\n    chat (e.g., ChatGPT)\n\n    copilot (e.g., GitHub Copilot)\n\
+      \nThis allows tracking of:\n\n    Which tool generated each prompt\n\n    Differences\
+      \ in output across tools\n\nPrompt Entries\n\nEach prompt entry includes:\n\n\
+      \    id: Unique identifier for the prompt\n\n    prompt: The actual prompt text\n\
+      \n    created_at: Timestamp of when the prompt was created\n\nExample\n\nversion:\
+      \ 1\n\nidea:\n  chat:\n    - id: idea-001\n      prompt: |\n        Build a\
+      \ FastAPI app for managing users.\n      created_at: 2026-03-20\n\nPurpose\n\
+      \nThis format enables:\n\n    Reproducibility of AI-generated work\n\n    Prompt\
+      \ versioning and tracking\n\n    Better collaboration and auditing\n\n    Clear\
+      \ separation of development stages\n\" i would like to add the rest of the documentation\
+      \ incluing how to run test, how to use the tool etc"
+    created_at: '2026-03-20T18:23:03.511021'
+  - id: ref-005
+    prompt: 'after install i encounted a limitation it looks like after you choose
+      one ai agent the tool is not allowin me to chose a diffrent one. sometimes developers
+      switch between ai agents so this should not be a limitation '
+    created_at: '2026-03-20T18:23:33.325888'
