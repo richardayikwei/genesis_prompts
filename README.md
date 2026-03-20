@@ -1,89 +1,132 @@
 # Genesis Prompts
-A CLI tool used to log prompts for the purpose of proving that you are the author of a work you built using AI
+
+A CLI tool for logging AI prompts to track the evolution of a project and provide evidence of authorship when building with AI.
+
+---
+
+## Why Genesis Prompts?
+
+When building with AI, a key question arises:
+
+> *Who owns what is produced?*
+
+Genesis Prompts helps you:
+
+* Track the prompts used to build your project
+* Maintain a structured history of development
+* Provide proof of authorship and intent
+* Reproduce how a system was created
+
+---
+
+## Usage
+
+### Add a prompt
+
+```bash
+uv run genesis add
+```
+
+Or (if your virtual environment is activated):
+
+```bash
+genesis add
+```
+
+---
+
+### Interactive flow
+
+You will be prompted to:
+
+1. Select AI agent (arrow keys)
+2. Select section:
+
+   * idea
+   * feature
+   * refactor
+3. Paste your prompt
+
+Example:
+
+```
+Choose AI agent:
+> chat
+  copilot
+
+Choose section:
+> feature
+
+Paste your prompt:
+> Add authentication system
+
+✅ Saved: feat-001
+```
+
+---
+
+## Project Behavior
+
+Genesis Prompts will:
+
+* Automatically detect your project root (via `pyproject.toml`)
+* Create a `.prompts` file if it does not exist
+* Append entries in a structured, versioned format
+
+---
 
 ## Genesis Prompts Format
 
 ### Overview
 
-The ```.prompts``` file is a YAML-based format used to define and track AI prompts across the lifecycle of a project.
+The `.prompts` file is a YAML-based format used to define and track AI prompts across the lifecycle of a project.
 
 It organizes prompts into three main stages:
 
-    Idea
+* Idea
+* Feature
+* Refactor
 
-    Feature
-
-    Refactor
-
-This structure allows developers to document how a project evolves through AI-assisted development.
+---
 
 ### Structure
-1. Idea
 
-The idea section captures the initial prompts that define the concept or starting point of a project.
+#### 1. Idea
 
-These prompts typically describe:
+Captures the initial prompts that define the concept or starting point of a project.
 
-    The problem being solved
+#### 2. Feature
 
-    The initial system design
+Contains prompts used to build and extend the project.
 
-    The first implementation request
+#### 3. Refactor
 
-2. Feature
+Contains prompts used to improve or restructure the project.
 
-The feature section contains prompts used to build and extend the project.
+---
 
-These prompts typically:
+### Agent Grouping
 
-    Add new functionality
+Prompts are grouped by the AI agent used:
 
-    Expand existing capabilities
+* `chat` (e.g., ChatGPT)
+* `copilot` (e.g., GitHub Copilot)
 
-    Introduce new components or integrations
+---
 
-3. Refactor
+### Prompt Entry
 
-The refactor section contains prompts focused on improving existing code.
+Each prompt includes:
 
-These prompts typically:
+* `id` → unique identifier
+* `prompt` → the actual prompt text
+* `created_at` → timestamp
 
-    Improve code structure and readability
+---
 
-    Optimize performance
+### Example
 
-    Reduce complexity
-
-    Apply best practices
-
-Agent Grouping
-
-Within each section, prompts are grouped by the AI agent used to generate them.
-
-Examples:
-
-    chat (e.g., ChatGPT)
-
-    copilot (e.g., GitHub Copilot)
-
-This allows tracking of:
-
-    Which tool generated each prompt
-
-    Differences in output across tools
-
-Prompt Entries
-
-Each prompt entry includes:
-
-    id: Unique identifier for the prompt
-
-    prompt: The actual prompt text
-
-    created_at: Timestamp of when the prompt was created
-
-Example
-
+```yaml
 version: 1
 
 idea:
@@ -92,16 +135,73 @@ idea:
       prompt: |
         Build a FastAPI app for managing users.
       created_at: 2026-03-20
+```
 
-Purpose
+---
 
-This format enables:
+## Running Tests
 
-    Reproducibility of AI-generated work
+Run tests using:
 
-    Prompt versioning and tracking
+```bash
+pytest
+```
 
-    Better collaboration and auditing
+Or with uv:
 
-    Clear separation of development stages
+```bash
+uv run pytest
+```
 
+---
+
+## Development Setup
+
+Install development dependencies:
+
+```bash
+uv sync --dev
+```
+
+---
+
+## Versioning & Changelog
+
+This project uses Commitizen for versioning:
+
+```bash
+cz commit
+cz bump
+```
+
+---
+
+## Contributing
+
+Contributions are welcome.
+
+1. Fork the repo
+2. Create a branch
+3. Make changes
+4. Run tests
+5. Submit a pull request
+
+---
+
+## License
+
+MIT License
+
+---
+
+## Final Note
+
+Genesis Prompts is not just a logging tool.
+
+It is a system for:
+
+* documenting AI-assisted development
+* preserving intent
+* proving authorship
+
+As AI becomes more integrated into software development, tools like this become essential.
