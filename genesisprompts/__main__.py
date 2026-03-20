@@ -10,15 +10,40 @@ SECTIONS = ["idea", "feature", "refactor"]
 
 
 def main():
-    parser = argparse.ArgumentParser(prog="genesis")
-    subparsers = parser.add_subparsers(dest="command")
+    parser = argparse.ArgumentParser(
+        prog="genesis",
+        description="Genesis Prompts CLI - Track and manage AI prompts for your projects",
+    )
 
-    subparsers.add_parser("add", help="Add a new prompt")
+    subparsers = parser.add_subparsers(
+        dest="command",
+        title="Commands",
+        metavar=""
+    )
+
+    # -------------------------
+    # ADD COMMAND
+    # -------------------------
+    subparsers.add_parser(
+        "add",
+        help="Add a new prompt",
+        description="Interactively add a prompt to the .prompts file"
+    )
+
+    # -------------------------
+    # FUTURE COMMANDS (placeholder)
+    # -------------------------
+    subparsers.add_parser(
+        "list",
+        help="List stored prompts (coming soon)"
+    )
 
     args = parser.parse_args()
 
     if args.command == "add":
         run_add()
+    elif args.command == "list":
+        print("🚧 'list' command coming soon")
     else:
         parser.print_help()
 
@@ -28,8 +53,6 @@ def main():
 # -------------------------
 def select_agent(genesis: Genesis):
     existing_agents = genesis.list_agents()
-
-    # merge default + existing agents
     all_agents = sorted(set(existing_agents + DEFAULT_AGENTS))
 
     agent = questionary.select(
@@ -52,17 +75,15 @@ def select_agent(genesis: Genesis):
 
 
 # -------------------------
-# ADD COMMAND
+# ADD FLOW
 # -------------------------
 def run_add():
     g = Genesis()
 
-    # 1. Agent selection (fixed)
     agent = select_agent(g)
     if not agent:
         return
 
-    # 2. Section selection
     section = questionary.select(
         "Choose section:",
         choices=SECTIONS
@@ -72,7 +93,6 @@ def run_add():
         print("Cancelled.")
         return
 
-    # 3. Prompt input
     prompt = questionary.text(
         "Paste your prompt:"
     ).ask()
@@ -81,7 +101,6 @@ def run_add():
         print("Prompt cannot be empty.")
         return
 
-    # 4. Save
     entry = g.add_prompt(section, agent, prompt)
 
     print(f"\n✅ Saved: {entry['id']}")
