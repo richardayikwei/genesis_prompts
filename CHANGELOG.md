@@ -1,3 +1,10 @@
+## v0.5.0 (2026-03-20)
+
+### Feat
+
+- **test_writer.py**: add test for prompt writer script
+- **prompt_writer.py**: add scritp to write prompt info to .prompt file
+
 ## v0.4.2 (2026-03-20)
 
 ### Fix
