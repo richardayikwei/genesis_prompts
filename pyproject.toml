@@ -1,10 +1,12 @@
 [project]
 name = "genesis-prompts"
 version = "0.2.0"
-description = "A library used to log prompts for the purpose of proving you are the author of a work you build by using AI"
+description = "A library used to log prompts for the purpose of proving that you are the author of a work you built using AI"
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "pyyaml>=6.0.3",
+]
 
 [dependency-groups]
 dev = [
