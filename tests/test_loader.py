@@ -1,6 +1,6 @@
 import pytest
 from pathlib import Path
-from genesisprompts.loader import load_prompts, find_project_root, load_config
+from genesisprompts.prompt_loader import load_prompts, find_project_root, load_config
 
 
 def test_creates_prompts_file_if_missing(tmp_path, monkeypatch):
