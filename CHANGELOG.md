@@ -1,3 +1,9 @@
+## v0.4.2 (2026-03-20)
+
+### Fix
+
+- **__init__.py,test_loader.py**: fix bug caused by change in file names that affect imports
+
 ## v0.4.1 (2026-03-20)
 
 ### Refactor

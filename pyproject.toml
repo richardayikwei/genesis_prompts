@@ -1,6 +1,6 @@
 [project]
 name = "genesis-prompts"
-version = "0.4.1"
+version = "0.4.2"
 description = "A library used to log prompts for the purpose of proving that you are the author of a work you built using AI"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -16,7 +16,7 @@ dev = [
 
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "0.4.1"
+version = "0.4.2"
 version_scheme = "semver"
 tag_format = "v$version"
 update_changelog_on_bump = true
