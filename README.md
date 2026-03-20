@@ -4,6 +4,12 @@ A CLI tool for logging AI prompts to track the evolution of a project and provid
 
 ---
 
+## Compatability
+
+Compatable with python >= 3.10
+
+---
+
 ## Why Genesis Prompts?
 
 When building with AI, a key question arises:
