@@ -1,3 +1,9 @@
+## v0.7.2 (2026-03-20)
+
+### Refactor
+
+- **__main__.py**: add help document to cli tool
+
 ## v0.7.1 (2026-03-20)
 
 ### Fix
