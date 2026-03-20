@@ -133,3 +133,7 @@ refactor:
       one ai agent the tool is not allowin me to chose a diffrent one. sometimes developers
       switch between ai agents so this should not be a limitation '
     created_at: '2026-03-20T18:23:33.325888'
+  - id: ref-006
+    prompt: i have hit an issue so my development says requires-python >=3.11 i tried
+      installing it in a python >=3.10 project
+    created_at: '2026-03-20T19:52:58.407282'
