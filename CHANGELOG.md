@@ -1,3 +1,9 @@
+## v0.7.4 (2026-03-20)
+
+### Refactor
+
+- **uv.lock**: making project backward compatablie
+
 ## v0.7.3 (2026-03-20)
 
 ### Refactor
