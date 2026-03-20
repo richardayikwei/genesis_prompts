@@ -139,6 +139,19 @@ idea:
 
 ---
 
+## Help
+
+Access help by using the commands
+
+```bash
+uv run genesis --help
+
+or
+
+genesis --help
+```
+---
+
 ## Running Tests
 
 Run tests using:
