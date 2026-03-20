@@ -1,3 +1,9 @@
+## v0.7.0 (2026-03-20)
+
+### Feat
+
+- **__main__.py**: make project into cli tool
+
 ## v0.6.0 (2026-03-20)
 
 ### Feat
