@@ -1,3 +1,9 @@
+## v0.7.3 (2026-03-20)
+
+### Refactor
+
+- **pyproject.toml,prompt_loader.py**: add backwards compatibility for python 3.10
+
 ## v0.7.2 (2026-03-20)
 
 ### Refactor
