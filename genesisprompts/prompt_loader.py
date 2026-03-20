@@ -1,6 +1,10 @@
 from pathlib import Path
 import yaml
-import tomllib  # Python 3.11+
+
+try:
+    import tomllib  
+except ModuleNotFoundError:  
+    import tomli as tomllib
 
 
 DEFAULT_CONFIG = {
